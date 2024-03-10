@@ -1,0 +1,17 @@
+<h2>Cadastro de usuário</h2>
+<p>Usuário funciona!</p>
+
+<input placeholder="Digite o nome do usuário aqui" [(ngModel)]="newUsuario"/>
+<button (click)="addUsuario()">Cadastrar usuário</button>
+
+<div *ngFor="let usuario of usuarios; let i = index">
+  <p>{{ usuario.nome }}</p>
+  <input type="checkbox" (click)="deleteUsuario(i)"/>Deletar 
+  <input type="checkbox" (click)="updateUsuario(i)"/>Finalizar 
+  <ul *ngIf="usuario.finalizado">
+    <li>Finalizada</li>
+  </ul>
+</div>
+
+<h2>Voltar para home!</h2>
+<button routerLink="/">Voltar home!</button>
